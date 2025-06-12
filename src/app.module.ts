@@ -18,7 +18,7 @@ import { AppService } from './app.service';
       imports: [ConfigModule],
       inject: [ConfigService],
       useFactory: (configService: ConfigService) => ({
-        type: 'mssql',
+        type: 'mysql',
         host: configService.get<string>('DB_HOST'),
         port: parseInt(configService.get<string>('DB_PORT') || '1433', 10),
         username: configService.get<string>('DB_USERNAME'),
