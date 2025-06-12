@@ -20,7 +20,7 @@ import { AppService } from './app.service';
       useFactory: (configService: ConfigService) => ({
         type: 'mysql',
         host: configService.get<string>('DB_HOST'),
-        port: parseInt(configService.get<string>('DB_PORT') || '1433', 10),
+        port: parseInt(configService.get<string>('DB_PORT') || '25355', 10),
         username: configService.get<string>('DB_USERNAME'),
         password: configService.get<string>('DB_PASSWORD'),
         database: configService.get<string>('DB_NAME'),
@@ -31,10 +31,10 @@ import { AppService } from './app.service';
         autoLoadEntities: true,
         entities: [Produto],
         logging: true,
-        options: {
-          encrypt: true,
-          trustServerCertificate: false,
-        },
+        // options: {
+        //   encrypt: true,
+        //   trustServerCertificate: false,
+        // },
       }),
     }),
 
